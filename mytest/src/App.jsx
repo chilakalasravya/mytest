@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function App(){
-    const {name, setName}=useState("Suresh")
-
-    return(
-        <div>
-<h3>Before Click name of the employee is: {name}</h3>
-<button onClick={()=>setName("Dr. Suresh Reddy")}>
-    Click me
-</button>
-        </div>
-    )
+  const [count, setCount]=useState(0);
+  useEffect(()=>{
+    console.log("clicked");
+  })
+  return(
+    <div>
+      <h2>{count}</h2>
+      <button onClick={()=>setCount(count+1)}>Click me</button>
+    </div>
+  )
 }
-export default App;
+export default App;
